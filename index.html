@@ -190,7 +190,26 @@
       .contact-panel { align-items: flex-start; flex-direction: column; padding: 25px; }
       .hero-buttons .btn { flex: 1; }
     }
-  </style>
+  
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 19px;
+}
+.profile-photo {
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent, #61d5c7);
+  box-shadow: 0 0 0 5px rgba(97, 213, 199, 0.10);
+}
+.profile-initials[hidden] {
+  display: none !important;
+}
+
+</style>
 </head>
 <body>
   <header class="topbar">
@@ -256,7 +275,15 @@
         </div>
         <div class="about-grid">
           <article class="card profile-card reveal">
-            <div class="profile-initials">YK</div>
+            <div class="profile-avatar">
+          <img
+            src="images/profil.jpg"
+            alt="Photo de profil de Kenmoe Dounbi Yannis"
+            class="profile-photo"
+            onerror="this.hidden = true; this.nextElementSibling.hidden = false;"
+          >
+          <div class="profile-initials" hidden>YK</div>
+        </div>
             <h3>Étudiant en troisième année</h3>
             <p>Institut Africain d'Informatique (IAI), Cameroun — option Systèmes et Réseaux.</p>
             <div class="tools">
@@ -297,16 +324,4 @@
             <div class="tools"><span class="tag">pfSense</span><span class="tag">Wazuh</span><span class="tag">Suricata</span></div>
           </article>
           <article class="card skill-card reveal">
-            <div class="skill-head"><span class="skill-symbol">⌁</span><h3>Services & documentation</h3></div>
-            <ul><li>BIND9 : résolution DNS</li><li>Postfix : transfert des courriels via SMTP</li><li>Dovecot : accès aux boîtes mail via IMAP/POP3</li><li>Roundcube, Apache2, MySQL et notions d'OpenLDAP</li></ul>
-            <div class="tools"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Markdown</span><span class="tag">draw.io</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects-section" id="projets">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Travaux pratiques</span>
-          <h2>Projet
+            <div class="skill-head"><span class="skill-symbol">⌁</span><h3>Services & documentation
